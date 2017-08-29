@@ -2,12 +2,28 @@ const React = window.React || require('react')
 const ReactDOM = window.ReactDOM || require('react-dom')
 const PropTypes = window.PropTypes || require('prop-types')
 
-const { Component, defaultProps } = React
+const extractVideoType = src => {
+  const splatByDot = src.split('.'),
+    len = splatByDot.length
 
-// Utils
-import { extractVideoType, PXVideoInit } from '../utils/video'
+  return splatByDot[len - 1]
+}
 
-class PXVideo extends Component {
+const PXVideoInit = props => {
+  const { id, caption, seekInterval, title, debug } = props
+
+  const PXVideo = new InitPxVideo({
+    "videoId": id,
+    "captionsOnDefault": caption && caption.default,
+    "seekInterval": seekInterval,
+    "videoTitle": title,
+    "debug": debug
+  })
+
+  return PXVideo
+}
+
+class PXVideo extends React.Component {
 
   componentDidMount() {
     const {
@@ -47,7 +63,7 @@ class PXVideo extends Component {
     // Caption Props
     const captionProps = {
       label: caption.label,
-      src: caption.label,
+      src: caption.src,
       srcLang: caption.lang
     }
 
@@ -100,7 +116,7 @@ PXVideo.PropTypes = {
   title: PropTypes.string,
   caption: PropTypes.shape({
     label: PropTypes.string,
-    source: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
     lang: PropTypes.string,
     default: PropTypes.boolean
   }),
@@ -138,8 +154,8 @@ ReactDOM.render(
     ]}
     caption={{
       label: 'English captions',
-      source: 'media/captions_PayPal_Austin_en.vtt',
-      lang: 'EN',
+      src: '../media/captions_PayPal_Austin_en.vtt',
+      lang: 'en',
       default: true
     }}
     poster="media/poster_PayPal_Austin2.jpg"
