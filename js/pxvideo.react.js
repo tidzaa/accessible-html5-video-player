@@ -13,7 +13,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = window.React || require('react');
 var ReactDOM = window.ReactDOM || require('react-dom');
 var PropTypes = window.PropTypes || require('prop-types');
-// const { defaultProps } = React
 
 var extractVideoType = function extractVideoType(src) {
   var splatByDot = src.split('.'),
@@ -164,7 +163,7 @@ ReactDOM.render(React.createElement(PXVideo, {
   sources: ['https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', 'https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.webm'],
   caption: {
     label: 'English captions',
-    src: '../media/captions_PayPal_Austin_en.vtt',
+    src: 'media/captions_PayPal_Austin_en.vtt',
     lang: 'en',
     default: true
   },

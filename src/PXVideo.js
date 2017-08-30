@@ -154,7 +154,7 @@ ReactDOM.render(
     ]}
     caption={{
       label: 'English captions',
-      src: '../media/captions_PayPal_Austin_en.vtt',
+      src: 'media/captions_PayPal_Austin_en.vtt',
       lang: 'en',
       default: true
     }}
