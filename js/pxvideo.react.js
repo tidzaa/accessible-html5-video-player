@@ -14,10 +14,6 @@ var React = window.React || require('react');
 var ReactDOM = window.ReactDOM || require('react-dom');
 var PropTypes = window.PropTypes || require('prop-types');
 
-var Component = React.Component,
-    defaultProps = React.defaultProps;
-
-
 var extractVideoType = function extractVideoType(src) {
   var splatByDot = src.split('.'),
       len = splatByDot.length;
@@ -25,8 +21,27 @@ var extractVideoType = function extractVideoType(src) {
   return splatByDot[len - 1];
 };
 
-var PXVideo = function (_Component) {
-  _inherits(PXVideo, _Component);
+var PXVideoInit = function PXVideoInit(props) {
+  var id = props.id,
+      caption = props.caption,
+      seekInterval = props.seekInterval,
+      title = props.title,
+      debug = props.debug;
+
+
+  var PXVideo = new InitPxVideo({
+    "videoId": id,
+    "captionsOnDefault": caption && caption.default,
+    "seekInterval": seekInterval,
+    "videoTitle": title,
+    "debug": debug
+  });
+
+  return PXVideo;
+};
+
+var PXVideo = function (_React$Component) {
+  _inherits(PXVideo, _React$Component);
 
   function PXVideo() {
     _classCallCheck(this, PXVideo);
@@ -44,14 +59,9 @@ var PXVideo = function (_Component) {
           seekInterval = _props.seekInterval,
           debug = _props.debug;
 
+      // Initialize video player
 
-      new InitPxVideo({
-        "videoId": id,
-        "captionsOnDefault": caption && caption.default,
-        "seekInterval": seekInterval,
-        "videoTitle": title,
-        "debug": debug
-      });
+      PXVideoInit({ id: id, caption: caption, seekInterval: seekInterval, debug: debug, title: title });
     }
   }, {
     key: 'render',
@@ -79,7 +89,7 @@ var PXVideo = function (_Component) {
       // Caption Props
       var captionProps = {
         label: caption.label,
-        src: caption.label,
+        src: caption.src,
         srcLang: caption.lang
       };
 
@@ -116,7 +126,7 @@ var PXVideo = function (_Component) {
   }]);
 
   return PXVideo;
-}(Component);
+}(React.Component);
 
 // Declaring PropTypes
 
@@ -126,7 +136,7 @@ PXVideo.PropTypes = {
   title: PropTypes.string,
   caption: PropTypes.shape({
     label: PropTypes.string,
-    source: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
     lang: PropTypes.string,
     default: PropTypes.boolean
   }),
@@ -138,10 +148,9 @@ PXVideo.PropTypes = {
   fallback: PropTypes.boolean,
   seekInterval: PropTypes.number,
   debug: PropTypes.boolean
-};
 
-// Assigning default values
-PXVideo.defaultProps = {
+  // Assigning default values
+};PXVideo.defaultProps = {
   width: 640,
   height: 360,
   controls: true,
@@ -154,8 +163,8 @@ ReactDOM.render(React.createElement(PXVideo, {
   sources: ['https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', 'https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.webm'],
   caption: {
     label: 'English captions',
-    source: 'media/captions_PayPal_Austin_en.vtt',
-    lang: 'EN',
+    src: 'media/captions_PayPal_Austin_en.vtt',
+    lang: 'en',
     default: true
   },
   poster: 'media/poster_PayPal_Austin2.jpg',
