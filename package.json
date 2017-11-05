@@ -51,6 +51,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react": "babel src/PXVideo.jsx --out-file js/pxvideo.react.js --presets=env,react",
-    "build": "cp -R ./js ./docs"
+    "build": "cp -R ./js ./docs && cp -R ./css ./docs"
   }
 }
