@@ -50,6 +50,7 @@
   "homepage": "https://github.com/paypal/accessible-html5-video-player#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "react": "babel src/PXVideo.jsx --out-file js/pxvideo.react.js --presets=env,react"
+    "react": "babel src/PXVideo.jsx --out-file js/pxvideo.react.js --presets=env,react",
+    "build": "cp -R ./js ./docs"
   }
 }
