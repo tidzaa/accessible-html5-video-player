@@ -48,13 +48,15 @@ Insert the HTML5 video markup in the Body of your HTML document. Replace the vid
 ```
 
 ### JavaScript
-Insert two JavaScript files right before the closing Body element of your HTML document. Add a Script element to initialize the video. Options are passed in JSON format. The options are:
+Insert two JavaScript files right before the closing Body element of your HTML document. Add a Script element to initialize the video. Options are passed in `JSON` format. The options are:
 
-- videoId: the value of the ID of the widget container (string) [required]
-- captionsOnDefault: denotes whether to show or hide caption upon loading (boolean) [optional, default is true]
-- seekInterval: the number of seconds to rewind and fast forward (whole number) [optional, default is 10]
-- videoTitle: short title of video; used for aria-label attribute on Play button to clarify to screen reader user what will be played (text) [optional, default is "Play"]
-- debug: turn console logs on or off (boolean) [optional, default is false]
+|  option | description  | dataType  |   | default   |
+|---|---|---|---|---|
+| videoId  | the value of the ID of the widget container  |  string | required  | |
+| captionsOnDefault  |  denotes whether to show or hide caption upon loading  | boolean  |  optional | `true`  |
+| seekInterval  | the number of seconds to rewind and fast forward  | number  | optional  |  10 |
+| videoTitle  | short title of video; used for aria-label attribute on Play button to clarify to screen reader user what will be played  | string  | optional  | Play  |
+| debug  |  turn console logs on or off | boolean  |  optional |  `false` |
 
 ```html
 <script src="js/strings.js"></script>
