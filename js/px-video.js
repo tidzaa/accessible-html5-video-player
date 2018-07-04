@@ -176,6 +176,7 @@ function InitPxVideo(options) {
 
   // change styles of fullscreen accordingly
   function fullScreenStyles() {
+    var currClass = obj.captionsContainer.className;
     if (
       document.fullscreen ||
       document.mozFullScreen ||
@@ -187,7 +188,7 @@ function InitPxVideo(options) {
       obj.container.setAttribute("style", "width: 100%; height: 100%;");
       obj.controls.className = "px-video-controls js-fullscreen-controls";
       obj.captionsContainer.className =
-        "px-video-captions js-fullscreen-captions";
+        currClass + " js-fullscreen-captions";
       obj.movie.setAttribute("width", "100%");
       obj.movie.setAttribute("height", "100%");
     } else {
@@ -195,7 +196,7 @@ function InitPxVideo(options) {
       // revert back to default styles
       obj.container.setAttribute("style", "width:" + obj.movieWidth + "px");
       obj.controls.className = "px-video-controls";
-      obj.captionsContainer.className = "px-video-captions";
+      obj.captionsContainer.className = currClass.replace('js-fullscreen-captions', '');
       obj.movie.setAttribute("width", obj.movieWidth);
       obj.movie.setAttribute("height", obj.movieHeight);
     }
@@ -634,30 +635,29 @@ function InitPxVideo(options) {
     false
   );
 
-  // Skip when clicking progress bar
-  obj.progressBar.addEventListener("click", function(e) {
-    obj.pos = (e.pageX - this.offsetLeft) / this.offsetWidth;
-    obj.movie.currentTime = obj.pos * obj.movie.duration;
+	// Skip when clicking progress bar
+	obj.progressBar.addEventListener('click', function(e) {
+		obj.pos = (e.pageX - this.getBoundingClientRect().left) / this.offsetWidth;
+		obj.movie.currentTime = obj.pos * obj.movie.duration;
 
-    // Special handling for "manual" captions
-    if (!obj.isTextTracks) {
-      adjustManualCaptions(obj);
-    }
-  });
+		// Special handling for "manual" captions
+		if (!obj.isTextTracks) {
+			adjustManualCaptions(obj);
+		}
+	});
 
-  // Show skip-to time when hovering on the progress bar
-  obj.progressBar.addEventListener("mousemove", function(e) {
-    obj.pos = (e.pageX - this.offsetLeft) / this.offsetWidth;
+	// Show skip-to time when hovering on the progress bar
+	obj.progressBar.addEventListener('mousemove', function(e) {
+		obj.pos = (e.pageX - this.getBoundingClientRect().left) / this.offsetWidth;
 
-    var seconds = obj.pos * obj.movie.duration;
-    var time = getTimeFromSeconds(seconds);
+		var seconds = obj.pos * obj.movie.duration;
+		var time = getTimeFromSeconds(seconds);
 
-    obj.progressBarHoverContainer.innerHTML = time;
-    obj.progressBarHoverContainer.style.position = "absolute";
-    obj.progressBarHoverContainer.style.left = e.pageX - 25 + "px";
-    obj.progressBarHoverContainer.classList.remove("hide");
-  });
-
+		obj.progressBarHoverContainer.innerHTML = time;
+		obj.progressBarHoverContainer.style.position = "absolute";
+		obj.progressBarHoverContainer.style.left = ((e.pageX - this.getBoundingClientRect().left) - 25)+"px";
+		obj.progressBarHoverContainer.classList.remove("hide");
+	});
   // Hide skip-to time when moving the mouse out of the progress bar
   obj.progressBar.addEventListener("mouseout", function(e) {
     obj.progressBarHoverContainer.classList.add("hide");
