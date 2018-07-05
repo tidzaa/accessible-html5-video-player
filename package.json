@@ -1,7 +1,7 @@
 {
   "company": "PayPal",
   "name": "accessible-html5-video-player",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A lightweight HTML5 video player which includes support for captions and screen reader accessibility.",
   "repository": {
     "type": "git",
@@ -39,10 +39,12 @@
     "javascript"
   ],
   "author": "weboverhauls@gmail.com",
-  "licenses": [{
-    "type": "BSD",
-    "url": "https://github.com/paypal/accessible-html5-video-player/blob/master/LICENSE.md"
-  }],
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/paypal/accessible-html5-video-player/blob/master/LICENSE.md"
+    }
+  ],
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/paypal/accessible-html5-video-player/issues"
