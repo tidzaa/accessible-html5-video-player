@@ -39,10 +39,12 @@
     "javascript"
   ],
   "author": "weboverhauls@gmail.com",
-  "licenses": [{
-    "type": "BSD",
-    "url": "https://github.com/paypal/accessible-html5-video-player/blob/master/LICENSE.md"
-  }],
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/paypal/accessible-html5-video-player/blob/master/LICENSE.md"
+    }
+  ],
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/paypal/accessible-html5-video-player/issues"
@@ -50,7 +52,6 @@
   "homepage": "https://github.com/paypal/accessible-html5-video-player#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "react": "babel src/PXVideo.jsx --out-file js/pxvideo.react.js --presets=env,react",
-    "build": "cp -R ./js ./docs && cp -R ./css ./docs"
+    "react": "babel src/PXVideo.jsx --out-file js/pxvideo.react.js --presets=env,react"
   }
 }
