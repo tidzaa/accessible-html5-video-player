@@ -172,9 +172,7 @@
     height: 40px;
   }
 }
-.no-svg .px-video-controls button {
-  background: no-repeat url("../images/px-video-sprite.png");
-}
+
 .px-video-controls button:focus {
   border: 1px #999 dotted;
   outline: none;
@@ -284,9 +282,7 @@
     margin-top: 5px;
   }
 }
-.no-svg .px-video-fullscreen-btn-container {
-  background: no-repeat url("../images/px-video-sprite.png");
-}
+
 .px-video-fullscreen-btn-container input[type="checkbox"]:focus+label {
   outline: 1px #999 dotted;
   background-position: -6px -907px;
@@ -327,9 +323,6 @@
   .px-video-captions-btn-container label {
     margin-top: 4px;
   }
-}
-.no-svg .px-video-captions-btn-container label {
-  background: no-repeat url("../images/px-video-sprite.png");
 }
 .px-video-captions-btn-container input[type="checkbox"]:focus+label {
   outline: 1px #999 dotted;
@@ -372,9 +365,6 @@
   .px-video-mute-btn-container label {
     margin-top: 6px;
   }
-}
-.no-svg .px-video-mute-btn-container label {
-  background: no-repeat url("../images/px-video-sprite.png");
 }
 .px-video-mute-btn-container input[type="checkbox"]:focus+label {
   outline: 1px #999 dotted;
