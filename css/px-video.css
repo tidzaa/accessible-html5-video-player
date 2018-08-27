@@ -446,7 +446,7 @@
     min-height: 36px;
   }
 }
-.flexbox.flexwrap .px-video-controls {
+.px-video-controls {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -454,46 +454,46 @@
   align-items: center;
   align-content: center;
 }
-.flexbox.flexwrap .progress-bar {
+.progress-bar {
   flex-grow: 1;
   width: 75%;
 }
 @media only screen and (min-width: 480px) {
-  .flexbox.flexwrap .progress-bar {
+  .progress-bar {
     width: 75%;
   }
 }
 @media only screen and (min-width: 590px) {
-  .flexbox.flexwrap .progress-bar {
+  .progress-bar {
     width: 85%;
   }
 }
 @media only screen and (min-width: 970px) {
-  .flexbox.flexwrap .progress-bar {
+  .progress-bar {
     width: 85%;
   }
 }
 @media only screen and (min-width: 1795px) {
-  .flexbox.flexwrap .progress-bar {
+  .progress-bar {
     width: 85%;
   }
 }
-.flexbox.flexwrap .px-video-progress {
+.px-video-progress {
   margin-top: 10px;
   width: 100%;
 }
-.flexbox.flexwrap .px-video-time {
+.px-video-time {
   flex-grow: 0;
   flex-shrink: 0;
   padding-left: 10px;
   margin-top: 0;
 }
-.flexbox.flexwrap .px-video-playback-buttons {
+.px-video-playback-buttons {
   flex-grow: 1;
   min-width: auto;
 }
 @media only screen and (min-width: 620px) {
-  .flexbox.flexwrap .px-video-playback-buttons {
+  .px-video-playback-buttons {
     left: auto;
     margin-left: auto;
     min-width: auto;
@@ -509,18 +509,18 @@
   }
 }
 @media only screen and (min-width: 620px) {
-  .flexbox.flexwrap .has-captions .px-video-playback-buttons {
+  .has-captions .px-video-playback-buttons {
     padding-left: 130px;
   }
 }
-.flexbox.flexwrap .px-video-controls button {
+.px-video-controls button {
   margin: 0 5px;
 }
-.flexbox.flexwrap .px-video-volume-controls {
+.px-video-volume-controls {
   min-width: auto;
 }
 @media only screen and (min-width: 540px) {
-  .flexbox.flexwrap .px-video-volume-controls {
+  .px-video-volume-controls {
     margin-top: 0;
   }
 }
