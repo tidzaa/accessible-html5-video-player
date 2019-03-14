@@ -146,4 +146,4 @@ If you experience any errors or if you have ideas for improvement, please feel f
 - [Plyr](https://github.com/selz/plyr) - by @sam_potts, @selz
 
 ## Copyright and License
-Copyright 2014, PayPal under [the BSD license](LICENSE.md).
+Copyright 2019, PayPal under [the BSD license](LICENSE.md).
