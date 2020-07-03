@@ -28,7 +28,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.4.0",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "serve": "^9.4.2"
   },
   "keywords": [
     "html5",
@@ -51,8 +52,8 @@
   },
   "homepage": "https://github.com/paypal/accessible-html5-video-player#readme",
   "scripts": {
+    "demo": "serve .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "react": "babel src/PXVideo.jsx --out-file js/pxvideo.react.js --presets=env,react",
-    "build": "cp -R ./js ./docs && cp -R ./css ./docs"
+    "react": "babel src/PXVideo.jsx --out-file js/pxvideo.react.js --presets=env,react"
   }
 }
