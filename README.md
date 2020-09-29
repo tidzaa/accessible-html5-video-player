@@ -3,7 +3,7 @@
 [![javascript](https://cdn.rawgit.com/aleen42/badges/master/src/javascript.svg)](https://cdn.rawgit.com/aleen42/badges/master/src/javascript.svg)
 
 ## What is it?
-A lightweight HTML5 video player which includes support for captions and screen reader accessibility. For details, read the blog post [Introducing an Accessible HTML5 Video Player](https://www.paypal-engineering.com/2014/09/05/introducing-an-accessible-html5-video-player/) on the PayPal Engineering blog. Also see [7 Lessons from Developing an Accessible HTML 5 Video Player](https://paulschantz.com/2015/03/06/7-lessons-from-developing-an-accessible-html-5-video-player/).
+A lightweight HTML5 video player which includes support for captions and screen reader accessibility. For details, read the blog post [Introducing an Accessible HTML5 Video Player](https://medium.com/paypal-engineering/introducing-an-accessible-html5-video-player-95b760286c88) on the PayPal Engineering blog (updated link). Also see [7 Lessons from Developing an Accessible HTML 5 Video Player](https://paulschantz.com/2015/03/06/7-lessons-from-developing-an-accessible-html-5-video-player/).
 
 ## Features
 - Provides an HTML5 video player with custom controls.
@@ -48,13 +48,15 @@ Insert the HTML5 video markup in the Body of your HTML document. Replace the vid
 ```
 
 ### JavaScript
-Insert two JavaScript files right before the closing Body element of your HTML document. Add a Script element to initialize the video. Options are passed in JSON format. The options are:
+Insert two JavaScript files right before the closing Body element of your HTML document. Add a Script element to initialize the video. Options are passed in `JSON` format. The options are:
 
-- videoId: the value of the ID of the widget container (string) [required]
-- captionsOnDefault: denotes whether to show or hide caption upon loading (boolean) [optional, default is true]
-- seekInterval: the number of seconds to rewind and fast forward (whole number) [optional, default is 10]
-- videoTitle: short title of video; used for aria-label attribute on Play button to clarify to screen reader user what will be played (text) [optional, default is "Play"]
-- debug: turn console logs on or off (boolean) [optional, default is false]
+|  option | description  | dataType  |   | default   |
+|---|---|---|---|---|
+| videoId  | the value of the ID of the widget container  |  string | required  | |
+| captionsOnDefault  |  denotes whether to show or hide caption upon loading  | boolean  |  optional | `true`  |
+| seekInterval  | the number of seconds to rewind and fast forward  | number  | optional  |  10 |
+| videoTitle  | short title of video; used for aria-label attribute on Play button to clarify to screen reader user what will be played  | string  | optional  | Play  |
+| debug  |  turn console logs on or off | boolean  |  optional |  `false` |
 
 ```html
 <script src="js/strings.js"></script>
@@ -111,12 +113,13 @@ If you experience any errors or if you have ideas for improvement, please feel f
 
 ~~You can also follow and contact the PayPal Accessibility team on Twitter: [@PayPalInclusive](https://twitter.com/paypalinclusive)~~ No longer exists.
 
-## Authors
-The original authors of this project are:
-- Dennis Lembree, primary developer || [https://github.com/weboverhauls](https://github.com/weboverhauls) || [@dennisl](https://twitter.com/dennisl)
-- Victor Tsaran, consultation and testing || [https://github.com/vick08](https://github.com/vick08) || [@vick08](https://twitter.com/vick08)
-- Jason Gabriele, consultation
-- Tim Resudek, design
+## Authors/Maintainer
+- Dennis Lembree (primary developer) [https://github.com/weboverhauls](https://github.com/weboverhauls) || [@dennisl](https://twitter.com/dennisl)
+- Victor Tsaran (consultation and testing) || [https://github.com/vick08](https://github.com/vick08) || [@vick08](https://twitter.com/vick08)
+- Jason Gabriele (consultation)
+- Tim Resudek (design)
+- Nawaz Khan (developer) [https://github.com/mpnkhan](https://github.com/mpnkhan)
+- Hozefa Jodiawalla (developer) [https://github.com/hozefaj](https://github.com/hozefaj) || [@hozefaj](https://twitter.com/HozefaJ)
 
 ## Browser Support
 - Chrome: full support.
@@ -143,4 +146,4 @@ The original authors of this project are:
 - [Plyr](https://github.com/selz/plyr) - by @sam_potts, @selz
 
 ## Copyright and License
-Copyright 2014, PayPal under [the BSD license](LICENSE.md).
+Copyright 2019, PayPal under [the BSD license](LICENSE.md).
