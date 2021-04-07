@@ -207,7 +207,7 @@ function InitPxVideo(options) {
   if (options.debug) {
     console.log("Inserting custom video controls");
   }
-  obj.controls.innerHTML = '<div class="progress-bar">' +
+  obj.controls.innerHTML = '<div class="px-progress-bar">' +
     '<progress class="px-video-progress" max="100" value="0"><span>0</span>% played</progress>' +
     '</div>' +
     '<div class="px-video-time">' +
