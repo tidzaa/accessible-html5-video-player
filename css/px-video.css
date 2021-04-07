@@ -112,7 +112,7 @@
   -webkit-appearance: none;
   border: none;
 }
-.px-video-progress[value]::-webkit-px-progress-bar {
+.px-video-progress[value]::-webkit-progress-bar {
   background-color: #e6e6e6;
 }
 .px-video-progress[value]::-webkit-progress-value {
