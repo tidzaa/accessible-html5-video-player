@@ -30,7 +30,7 @@ function InitPxVideo(options) {
     }
   }
 
-  // For "manual" captions, adjust caption position when play time changed (via rewind, clicking progress bar, etc.)
+  // For "manual" captions, adjust caption position when play time is changed (via rewind, clicking progress bar, etc.)
   function adjustManualCaptions(obj) {
     obj.subcount = 0;
     while (video_timecode_max(obj.captions[obj.subcount][0]) < obj.movie.currentTime.toFixed(1)) {
